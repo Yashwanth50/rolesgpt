@@ -35,7 +35,9 @@ const RolesCard: FC<RolesCardProps> = ({ selectedRoleData }) => {
               I am your{" "}
               <span className="font-bold text-gray-900">{card.title}</span>
             </h3>
-            <p className="text-gray-600 text-sm font-light leading-6">{card.description}</p>
+            <p className="text-gray-600 text-sm font-light leading-6">
+              {card.description}
+            </p>
             <div className="h-1 w-full border-b border-gray-200"></div>
             <p className="text-gray-500 text-sm leading-6 font-light ">
               {card.uploadInfo}
@@ -46,7 +48,7 @@ const RolesCard: FC<RolesCardProps> = ({ selectedRoleData }) => {
             className="text-text_primary font-semibold hover:underline flex justify-between items-center"
           >
             <span>{card.linkText}</span>
-            <svg
+            {/* <svg
               className="w-4 h-4 ml-1"
               fill="none"
               stroke="currentColor"
@@ -59,7 +61,12 @@ const RolesCard: FC<RolesCardProps> = ({ selectedRoleData }) => {
                 strokeWidth="2"
                 d="M9 5l7 7-7 7"
               ></path>
-            </svg>
+            </svg> */}
+            <img
+              src={"/icons/arrow-right.svg"}
+              alt="arrow-right"
+              className="h-6 w-6"
+            />
           </a>
         </div>
       ))}

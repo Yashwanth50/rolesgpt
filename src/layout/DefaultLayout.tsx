@@ -10,6 +10,7 @@ const DefaultLayout: FC = () => {
 
   const [selectedRole, setSelectedRole] = useState("Select Role");
   const [rlsDrpdwn, setRlsDrpdwn] = useState(false);
+  const [selectedFilePreviews, setSelectedFilePreviews] = useState([]);
 
   return (
     <div className="flex h-[100vh] w-[100vw] overflow-hidden md:overflow-auto">
@@ -29,6 +30,8 @@ const DefaultLayout: FC = () => {
               setSelectedRole,
               rlsDrpdwn,
               setRlsDrpdwn,
+              selectedFilePreviews,
+              setSelectedFilePreviews,
             }}
           />
         </MainContent>

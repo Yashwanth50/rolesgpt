@@ -26,7 +26,6 @@ interface OutletContext {
 const Home: FC = () => {
   const { activeTab, selectedRole, setSelectedRole } =
     useOutletContext<OutletContext>();
-  console.log("activeTab", activeTab);
 
   const rolesData =
     activeTab === "Personal" ? rolesPersonalData : rolesEnterpriseData;
