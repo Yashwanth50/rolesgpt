@@ -11,6 +11,8 @@ const DefaultLayout: FC = () => {
   const [selectedRole, setSelectedRole] = useState("Select Role");
   const [rlsDrpdwn, setRlsDrpdwn] = useState(false);
   const [selectedFilePreviews, setSelectedFilePreviews] = useState([]);
+  const [activeStep, setActiveStep] = useState(0);
+  const [startStepper, setStartStepper] = useState(false);
 
   return (
     <div className="flex h-[100vh] w-[100vw] overflow-hidden md:overflow-auto">
@@ -32,6 +34,10 @@ const DefaultLayout: FC = () => {
               setRlsDrpdwn,
               selectedFilePreviews,
               setSelectedFilePreviews,
+              activeStep,
+              setActiveStep,
+              startStepper,
+              setStartStepper,
             }}
           />
         </MainContent>

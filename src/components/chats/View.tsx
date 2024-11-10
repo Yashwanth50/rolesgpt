@@ -14,11 +14,15 @@ interface FileWithId {
 
 interface OutletContext {
   setSelectedFilePreviews: (files: FileWithId[]) => void;
+  activeStep: number;
+  setActiveStep: React.Dispatch<React.SetStateAction<number>>;
+  setStartStepper: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function View() {
   const navigate = useNavigate();
-  const { setSelectedFilePreviews } = useOutletContext<OutletContext>();
+  const { setSelectedFilePreviews, setActiveStep, setStartStepper } =
+    useOutletContext<OutletContext>();
   const [selectedFiles, setSelectedFiles] = useState<FileWithId[]>([]);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -26,10 +30,23 @@ function View() {
     fileInputRef.current?.click();
   };
 
-  function handleRedirect(event: any) {
+  const handleSubmit = (event: any) => {
     event?.preventDefault();
+    setStartStepper(true);
+    setActiveStep(0);
     navigate(`/chat/1`);
-  }
+    const interval = setInterval(() => {
+      setActiveStep((prevStep) => {
+        if (prevStep < 3) {
+          return prevStep + 1;
+        } else {
+          clearInterval(interval);
+          setStartStepper(false);
+          return prevStep;
+        }
+      });
+    }, 1000);
+  };
 
   const handleFileSelectionAndUpload = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -45,9 +62,6 @@ function View() {
         progress: 0, // Initial progress set to 0
         showTrashIcon: false,
       }));
-
-      // newFiles.forEach((file) => {
-      //   setSelectedFiles((prev) => [...prev, file]);
 
       newFiles.forEach((file) => {
         setSelectedFiles((prev) => {
@@ -72,7 +86,6 @@ function View() {
           );
         }, 200);
 
-        // Clear interval once upload is complete
         setTimeout(() => {
           setSelectedFiles((prevFiles) =>
             prevFiles.map((f) =>
@@ -82,7 +95,7 @@ function View() {
             )
           );
           clearInterval(interval);
-        }, 2000); // Simulate a 2-second upload
+        }, 2000);
       });
     }
   };
@@ -250,7 +263,7 @@ function View() {
                         <div className=" w-full flex justify-end">
                           <button
                             type="submit"
-                            onClick={(e) => handleRedirect(e)}
+                            onClick={(e) => handleSubmit(e)}
                             disabled={isButtonDisabled()}
                             className={`h-9 w-9 font-semibold rounded ${
                               selectedFiles.length > 0
