@@ -1,4 +1,5 @@
 import { useState, FC } from "react";
+import { useOutletContext } from "react-router-dom";
 
 interface RoleSelectorProps {
   roles: string[];
@@ -6,33 +7,29 @@ interface RoleSelectorProps {
   setSelectedRole: (role: string) => void;
 }
 
+interface OutletContext {
+  rlsDrpdwn: boolean;
+  setRlsDrpdwn: (value: boolean) => void;
+}
+
 const RoleSelector: FC<RoleSelectorProps> = ({
   roles,
   selectedRole,
   setSelectedRole,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  //   const handleSelect = (role: string) => {
-  //     if (role === "Create a new role") {
-  //       setIsModalOpen(true);
-  //     } else {
-  //       setSelectedRole(role);
-  //     }
-  //     setIsOpen(false);
-  //   };
-
+  const { rlsDrpdwn, setRlsDrpdwn } = useOutletContext<OutletContext>();
   return (
     <>
       <div className="relative">
         <button
-          onClick={() => setIsOpen((prev) => !prev)}
-          className="w-[224px] flex justify-between items-center border border-text_borders text-text_borders px-4 py-2 rounded-lg bg-white hover:bg-gray-50 focus:ring-2 font-medium focus:ring-text_borders"
+          onClick={() => setRlsDrpdwn(!rlsDrpdwn)}
+          className="w-52 flex justify-between items-center border border-text_primary text-text_primary px-4 py-2 rounded-md bg-white hover:bg-gray-50 focus:ring-2 font-medium focus:ring-text_primary"
         >
           <span>{selectedRole}</span>
           <svg
-            className="w-4 h-4 text-text_borders"
+            className="w-4 h-4 text-text_primary"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -47,14 +44,14 @@ const RoleSelector: FC<RoleSelectorProps> = ({
           </svg>
         </button>
 
-        {isOpen && (
+        {rlsDrpdwn && (
           <ul className="absolute mt-1 w-[224px] border border-gray-300 bg-white rounded-lg shadow-lg z-10">
             <li
               onClick={() => setIsModalOpen(true)}
-              className="flex items-center px-4 py-2 cursor-pointer text-text_borders hover:bg-gray-100 font-semibold"
+              className="flex items-center px-4 py-2 cursor-pointer text-text_primary hover:bg-gray-100 font-semibold"
             >
               <svg
-                className="w-4 h-4 mr-2 text-text_borders"
+                className="w-4 h-4 mr-2 text-text_primary"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -74,7 +71,7 @@ const RoleSelector: FC<RoleSelectorProps> = ({
                 key={index}
                 onClick={() => {
                   setSelectedRole(role);
-                  setIsOpen(false);
+                  setRlsDrpdwn(false);
                 }}
                 className="flex items-center px-4 py-2 cursor-pointer text-gray-700 hover:bg-gray-100"
               >
@@ -95,7 +92,7 @@ const RoleSelector: FC<RoleSelectorProps> = ({
             <input
               type="text"
               placeholder="Enter new role name"
-              className="border border-gray-300 rounded-lg w-full px-4 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-text_borders"
+              className="border border-gray-300 rounded-lg w-full px-4 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-text_primary"
             />
             <div className="flex justify-end gap-2">
               <button
@@ -109,7 +106,7 @@ const RoleSelector: FC<RoleSelectorProps> = ({
                   // Add the new role logic here
                   setIsModalOpen(false);
                 }}
-                className="px-4 py-2 bg-text_borders text-white rounded-lg hover:bg-text_borders"
+                className="px-4 py-2 bg-text_primary text-white rounded-lg hover:bg-text_primary"
               >
                 Save
               </button>
