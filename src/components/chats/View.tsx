@@ -222,7 +222,7 @@ function View() {
                             {selectedFiles.map((file) => (
                               <div
                                 key={file.fileId}
-                                className="px-3 h-14 border rounded-lg bg-white flex items-center justify-between"
+                                className="px-3 h-14 border rounded-lg bg-white flex items-center justify-between mt-3"
                               >
                                 <div className=" flex items-center gap-3">
                                   {file.loading ? (
@@ -289,7 +289,7 @@ function View() {
                           </div>
                         )}
                         <form onSubmit={handleSubmit(onSubmit)}>
-                          <div className="bg-white rounded-md flex items-center px-3 w-full">
+                          <div className="bg-white rounded-md items-center px-3 w-full flex justify-end">
                             {/* <textarea
                               {...register("question")}
                               // placeholder="Ask Roles GPT..."
