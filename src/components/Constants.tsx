@@ -10,9 +10,11 @@ export const rolesPersonalData = [
     category: "Personal",
     roles: [
       {
+        id: "p1",
         role: "AI Assistant",
         cards: [
           {
+            card_id: "p1",
             iconSrc: "/icons/roles_card/user-profile-card.svg",
             title: "College Counselor",
             description:
@@ -22,6 +24,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Report",
           },
           {
+            card_id: "p2",
             iconSrc: "/icons/roles_card/search-card.svg",
             title: "Research Assistant",
             description:
@@ -31,6 +34,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Project",
           },
           {
+            card_id: "p3",
             iconSrc: "/icons/roles_card/file-card.svg",
             title: "Exam Helper",
             description:
@@ -40,6 +44,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Document",
           },
           {
+            card_id: "p4",
             iconSrc: "/icons/roles_card/currency-coin-card.svg",
             title: "Financial Aid & Scholarship Advisor",
             description:
@@ -51,9 +56,11 @@ export const rolesPersonalData = [
         ],
       },
       {
+        id: "p2",
         role: "Personal Finance",
         cards: [
           {
+            card_id: "p5",
             iconSrc: "/icons/roles_card/user-profile-card.svg",
             title: "College Counselor",
             description:
@@ -63,6 +70,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Report",
           },
           {
+            card_id: "p6",
             iconSrc: "/icons/roles_card/search-card.svg",
             title: "Research Assistant",
             description:
@@ -72,6 +80,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Project",
           },
           {
+            card_id: "p7",
             iconSrc: "/icons/roles_card/file-card.svg",
             title: "Exam Helper",
             description:
@@ -81,6 +90,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Document",
           },
           {
+            card_id: "p8",
             iconSrc: "/icons/roles_card/currency-coin-card.svg",
             title: "Financial Aid & Scholarship Advisor",
             description:
@@ -92,9 +102,11 @@ export const rolesPersonalData = [
         ],
       },
       {
+        id: "p3",
         role: "Health & Wellness",
         cards: [
           {
+            card_id: "p9",
             iconSrc: "/icons/roles_card/user-profile-card.svg",
             title: "College Counselor",
             description:
@@ -104,6 +116,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Report",
           },
           {
+            card_id: "p10",
             iconSrc: "/icons/roles_card/search-card.svg",
             title: "Research Assistant",
             description:
@@ -113,6 +126,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Project",
           },
           {
+            card_id: "p11",
             iconSrc: "/icons/roles_card/file-card.svg",
             title: "Exam Helper",
             description:
@@ -122,6 +136,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Document",
           },
           {
+            card_id: "p12",
             iconSrc: "/icons/roles_card/currency-coin-card.svg",
             title: "Financial Aid & Scholarship Advisor",
             description:
@@ -133,9 +148,11 @@ export const rolesPersonalData = [
         ],
       },
       {
+        id: "p4",
         role: "Home Maintenance",
         cards: [
           {
+            card_id: "p13",
             iconSrc: "/icons/roles_card/user-profile-card.svg",
             title: "College Counselor",
             description:
@@ -145,6 +162,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Report",
           },
           {
+            card_id: "p14",
             iconSrc: "/icons/roles_card/search-card.svg",
             title: "Research Assistant",
             description:
@@ -154,6 +172,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Project",
           },
           {
+            card_id: "p15",
             iconSrc: "/icons/roles_card/file-card.svg",
             title: "Exam Helper",
             description:
@@ -163,6 +182,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Document",
           },
           {
+            card_id: "p16",
             iconSrc: "/icons/roles_card/currency-coin-card.svg",
             title: "Financial Aid & Scholarship Advisor",
             description:
@@ -215,9 +235,11 @@ export const rolesPersonalData = [
       //   ],
       // },
       {
+        id: "p5",
         role: "Pet Care",
         cards: [
           {
+            card_id: "p17",
             iconSrc: "/icons/roles_card/user-profile-card.svg",
             title: "College Counselor",
             description:
@@ -227,6 +249,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Report",
           },
           {
+            card_id: "p18",
             iconSrc: "/icons/roles_card/search-card.svg",
             title: "Research Assistant",
             description:
@@ -236,6 +259,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Project",
           },
           {
+            card_id: "p19",
             iconSrc: "/icons/roles_card/file-card.svg",
             title: "Exam Helper",
             description:
@@ -245,6 +269,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Document",
           },
           {
+            card_id: "p20",
             iconSrc: "/icons/roles_card/currency-coin-card.svg",
             title: "Financial Aid & Scholarship Advisor",
             description:
@@ -256,9 +281,11 @@ export const rolesPersonalData = [
         ],
       },
       {
+        id: "p6",
         role: "Cooking",
         cards: [
           {
+            card_id: "p21",
             iconSrc: "/icons/roles_card/user-profile-card.svg",
             title: "College Counselor",
             description:
@@ -268,6 +295,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Report",
           },
           {
+            card_id: "p22",
             iconSrc: "/icons/roles_card/search-card.svg",
             title: "Research Assistant",
             description:
@@ -277,6 +305,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Project",
           },
           {
+            card_id: "p23",
             iconSrc: "/icons/roles_card/file-card.svg",
             title: "Exam Helper",
             description:
@@ -286,6 +315,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Document",
           },
           {
+            card_id: "p24",
             iconSrc: "/icons/roles_card/currency-coin-card.svg",
             title: "Financial Aid & Scholarship Advisor",
             description:
@@ -297,9 +327,11 @@ export const rolesPersonalData = [
         ],
       },
       {
+        id: "p7",
         role: "Recreation",
         cards: [
           {
+            card_id: "p25",
             iconSrc: "/icons/roles_card/user-profile-card.svg",
             title: "College Counselor",
             description:
@@ -309,6 +341,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Report",
           },
           {
+            card_id: "p26",
             iconSrc: "/icons/roles_card/search-card.svg",
             title: "Research Assistant",
             description:
@@ -318,6 +351,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Project",
           },
           {
+            card_id: "p27",
             iconSrc: "/icons/roles_card/file-card.svg",
             title: "Exam Helper",
             description:
@@ -327,6 +361,7 @@ export const rolesPersonalData = [
             linkText: "View Sample Document",
           },
           {
+            card_id: "p28",
             iconSrc: "/icons/roles_card/currency-coin-card.svg",
             title: "Financial Aid & Scholarship Advisor",
             description:
@@ -346,9 +381,11 @@ export const rolesEnterpriseData = [
     category: "Enterprise",
     roles: [
       {
+        id: "e1",
         role: "Academic Coach",
         cards: [
           {
+            card_id: "e1",
             iconSrc: "/icons/roles_card/user-profile-card.svg",
             title: "College Counselor",
             description:
@@ -358,6 +395,7 @@ export const rolesEnterpriseData = [
             linkText: "View Sample Report",
           },
           {
+            card_id: "e2",
             iconSrc: "/icons/roles_card/search-card.svg",
             title: "Research Assistant",
             description:
@@ -367,6 +405,7 @@ export const rolesEnterpriseData = [
             linkText: "View Sample Project",
           },
           {
+            card_id: "e3",
             iconSrc: "/icons/roles_card/file-card.svg",
             title: "Exam Helper",
             description:
@@ -376,6 +415,7 @@ export const rolesEnterpriseData = [
             linkText: "View Sample Document",
           },
           {
+            card_id: "e4",
             iconSrc: "/icons/roles_card/currency-coin-card.svg",
             title: "Financial Aid & Scholarship Advisor",
             description:
@@ -692,7 +732,7 @@ export const uploadOptions = [
     isCloud: true,
   },
   {
-    icon: "icons/upload/upload_my_knowledge.svg",
+    icon: "/icons/upload/upload_my_knowledge.svg",
     title: "Connect to Microsoft One Drive",
     isCloud: true,
   },

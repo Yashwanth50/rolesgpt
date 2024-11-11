@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<DefaultLayout />}>
           {/* <Route index element={<Home />} /> */}
           <Route path="/" element={<Home />} />
-          <Route path="view" element={<View />} />
+          <Route path="view/:id" element={<View />} />
           <Route path="chat/:id" element={<ChatDetails />} />
         </Route>
       </Routes>

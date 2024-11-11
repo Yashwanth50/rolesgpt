@@ -1,7 +1,12 @@
 import React, { useRef, useState } from "react";
-import { getFileIcon, uploadOptions } from "../Constants";
+import {
+  getFileIcon,
+  rolesEnterpriseData,
+  rolesPersonalData,
+  uploadOptions,
+} from "../Constants";
 import Header from "../common/Header";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 interface FileWithId {
   fileId: number;
@@ -26,8 +31,19 @@ type FormData = {
 
 function View() {
   const navigate = useNavigate();
+  const { id } = useParams();
 
-  const { register, handleSubmit } = useForm<FormData>();
+  const cardData =
+    rolesPersonalData
+      .flatMap((role) => role.roles.flatMap((r) => r.cards))
+      .find((card) => card.card_id === id) ||
+    rolesEnterpriseData
+      .flatMap((role) => role.roles.flatMap((r) => r.cards))
+      .find((card) => card.card_id === id);
+
+  // const { register, handleSubmit } = useForm<FormData>();
+  const { handleSubmit } = useForm<FormData>();
+
   // const questionValue = watch("question");
 
   const { setSelectedFilePreviews, setActiveStep, setStartStepper } =
@@ -136,7 +152,7 @@ function View() {
                   <div className="max-w-[100%] rounded-normal rounded-bl-none bg-white md:bg-chatbg px-6 py-5 flex flex-col gap-3 mb-1 mx-4 ">
                     <div className="text-[14px] md:text-[16px] text-secondary font-normal leading-[22px] flex items-start gap-2">
                       <img
-                        src="icons/logo.svg"
+                        src="/icons/logo.svg"
                         alt="logo"
                         className="w-6 h-6 mt-1"
                       />
@@ -148,7 +164,8 @@ function View() {
                         <p>
                           Hi Deepak, I am your
                           <span className="font-medium mx-1">
-                            College Counsellor!
+                            {/* College Counsellor! */}
+                            {cardData?.title}
                           </span>
                         </p>
                         <br />
@@ -273,11 +290,11 @@ function View() {
                         )}
                         <form onSubmit={handleSubmit(onSubmit)}>
                           <div className="bg-white rounded-md flex items-center px-3 w-full">
-                            <textarea
+                            {/* <textarea
                               {...register("question")}
                               // placeholder="Ask Roles GPT..."
                               className="w-full h-12 border-none resize-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-400 py-3 text-base leading-relaxed min-h-[50px]"
-                            />
+                            /> */}
 
                             {/* <div className=" w-full flex justify-end"> */}
                             <button

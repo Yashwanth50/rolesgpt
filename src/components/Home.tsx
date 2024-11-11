@@ -47,7 +47,7 @@ const Home: FC = () => {
           <h2 className="text-2xl font-semibold bg-gradient-to-r from-orange-400 to-text_primary text-transparent bg-clip-text">
             Choose an Expert Role!
           </h2>
-          <span >✨</span>
+          <span>✨</span>
 
           <RoleSelector
             roles={roles.map((role) => role.role)}
