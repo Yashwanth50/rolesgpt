@@ -5,7 +5,7 @@ import Sidebar from "../components/sidebar/Sidebar";
 
 const DefaultLayout: FC = () => {
   const [activeTab, setActiveTab] = useState<"Personal" | "Enterprise">(
-    "Personal"
+    "Enterprise"
   );
 
   const [selectedRole, setSelectedRole] = useState("Select Role");

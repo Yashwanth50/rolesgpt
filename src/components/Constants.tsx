@@ -386,131 +386,8 @@ export const rolesEnterpriseData = [
           },
         ],
       },
-      {
-        role: "Personal Finance",
-        cards: [
-          {
-            iconSrc: "/icons/roles_card/user-profile-card.svg",
-            title: "College Counselor",
-            description:
-              "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
-            uploadInfo:
-              "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
-            linkText: "View Sample Report",
-          },
-          {
-            iconSrc: "/icons/roles_card/search-card.svg",
-            title: "Research Assistant",
-            description:
-              "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
-            uploadInfo:
-              "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
-            linkText: "View Sample Project",
-          },
-          {
-            iconSrc: "/icons/roles_card/file-card.svg",
-            title: "Exam Helper",
-            description:
-              "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
-            uploadInfo:
-              "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
-            linkText: "View Sample Document",
-          },
-          {
-            iconSrc: "/icons/roles_card/currency-coin-card.svg",
-            title: "Financial Aid & Scholarship Advisor",
-            description:
-              "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
-            uploadInfo:
-              "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
-            linkText: "View Sample Document",
-          },
-        ],
-      },
-      {
-        role: "Health & Wellness",
-        cards: [
-          {
-            iconSrc: "/icons/roles_card/user-profile-card.svg",
-            title: "College Counselor",
-            description:
-              "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
-            uploadInfo:
-              "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
-            linkText: "View Sample Report",
-          },
-          {
-            iconSrc: "/icons/roles_card/search-card.svg",
-            title: "Research Assistant",
-            description:
-              "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
-            uploadInfo:
-              "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
-            linkText: "View Sample Project",
-          },
-          {
-            iconSrc: "/icons/roles_card/file-card.svg",
-            title: "Exam Helper",
-            description:
-              "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
-            uploadInfo:
-              "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
-            linkText: "View Sample Document",
-          },
-          {
-            iconSrc: "/icons/roles_card/currency-coin-card.svg",
-            title: "Financial Aid & Scholarship Advisor",
-            description:
-              "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
-            uploadInfo:
-              "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
-            linkText: "View Sample Document",
-          },
-        ],
-      },
-      {
-        role: "Home Maintenance",
-        cards: [
-          {
-            iconSrc: "/icons/roles_card/user-profile-card.svg",
-            title: "College Counselor",
-            description:
-              "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
-            uploadInfo:
-              "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
-            linkText: "View Sample Report",
-          },
-          {
-            iconSrc: "/icons/roles_card/search-card.svg",
-            title: "Research Assistant",
-            description:
-              "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
-            uploadInfo:
-              "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
-            linkText: "View Sample Project",
-          },
-          {
-            iconSrc: "/icons/roles_card/file-card.svg",
-            title: "Exam Helper",
-            description:
-              "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
-            uploadInfo:
-              "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
-            linkText: "View Sample Document",
-          },
-          {
-            iconSrc: "/icons/roles_card/currency-coin-card.svg",
-            title: "Financial Aid & Scholarship Advisor",
-            description:
-              "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
-            uploadInfo:
-              "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
-            linkText: "View Sample Document",
-          },
-        ],
-      },
       // {
-      //   role: "Academic Coach",
+      //   role: "Personal Finance",
       //   cards: [
       //     {
       //       iconSrc: "/icons/roles_card/user-profile-card.svg",
@@ -550,129 +427,252 @@ export const rolesEnterpriseData = [
       //     },
       //   ],
       // },
-      {
-        role: "Pet Care",
-        cards: [
-          {
-            iconSrc: "/icons/roles_card/user-profile-card.svg",
-            title: "College Counselor",
-            description:
-              "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
-            uploadInfo:
-              "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
-            linkText: "View Sample Report",
-          },
-          {
-            iconSrc: "/icons/roles_card/search-card.svg",
-            title: "Research Assistant",
-            description:
-              "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
-            uploadInfo:
-              "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
-            linkText: "View Sample Project",
-          },
-          {
-            iconSrc: "/icons/roles_card/file-card.svg",
-            title: "Exam Helper",
-            description:
-              "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
-            uploadInfo:
-              "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
-            linkText: "View Sample Document",
-          },
-          {
-            iconSrc: "/icons/roles_card/currency-coin-card.svg",
-            title: "Financial Aid & Scholarship Advisor",
-            description:
-              "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
-            uploadInfo:
-              "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
-            linkText: "View Sample Document",
-          },
-        ],
-      },
-      {
-        role: "Cooking",
-        cards: [
-          {
-            iconSrc: "/icons/roles_card/user-profile-card.svg",
-            title: "College Counselor",
-            description:
-              "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
-            uploadInfo:
-              "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
-            linkText: "View Sample Report",
-          },
-          {
-            iconSrc: "/icons/roles_card/search-card.svg",
-            title: "Research Assistant",
-            description:
-              "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
-            uploadInfo:
-              "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
-            linkText: "View Sample Project",
-          },
-          {
-            iconSrc: "/icons/roles_card/file-card.svg",
-            title: "Exam Helper",
-            description:
-              "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
-            uploadInfo:
-              "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
-            linkText: "View Sample Document",
-          },
-          {
-            iconSrc: "/icons/roles_card/currency-coin-card.svg",
-            title: "Financial Aid & Scholarship Advisor",
-            description:
-              "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
-            uploadInfo:
-              "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
-            linkText: "View Sample Document",
-          },
-        ],
-      },
-      {
-        role: "Recreation",
-        cards: [
-          {
-            iconSrc: "/icons/roles_card/user-profile-card.svg",
-            title: "College Counselor",
-            description:
-              "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
-            uploadInfo:
-              "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
-            linkText: "View Sample Report",
-          },
-          {
-            iconSrc: "/icons/roles_card/search-card.svg",
-            title: "Research Assistant",
-            description:
-              "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
-            uploadInfo:
-              "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
-            linkText: "View Sample Project",
-          },
-          {
-            iconSrc: "/icons/roles_card/file-card.svg",
-            title: "Exam Helper",
-            description:
-              "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
-            uploadInfo:
-              "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
-            linkText: "View Sample Document",
-          },
-          {
-            iconSrc: "/icons/roles_card/currency-coin-card.svg",
-            title: "Financial Aid & Scholarship Advisor",
-            description:
-              "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
-            uploadInfo:
-              "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
-            linkText: "View Sample Document",
-          },
-        ],
-      },
+      // {
+      //   role: "Health & Wellness",
+      //   cards: [
+      //     {
+      //       iconSrc: "/icons/roles_card/user-profile-card.svg",
+      //       title: "College Counselor",
+      //       description:
+      //         "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
+      //       uploadInfo:
+      //         "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
+      //       linkText: "View Sample Report",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/search-card.svg",
+      //       title: "Research Assistant",
+      //       description:
+      //         "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
+      //       uploadInfo:
+      //         "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
+      //       linkText: "View Sample Project",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/file-card.svg",
+      //       title: "Exam Helper",
+      //       description:
+      //         "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
+      //       uploadInfo:
+      //         "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
+      //       linkText: "View Sample Document",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/currency-coin-card.svg",
+      //       title: "Financial Aid & Scholarship Advisor",
+      //       description:
+      //         "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
+      //       uploadInfo:
+      //         "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
+      //       linkText: "View Sample Document",
+      //     },
+      //   ],
+      // },
+      // {
+      //   role: "Home Maintenance",
+      //   cards: [
+      //     {
+      //       iconSrc: "/icons/roles_card/user-profile-card.svg",
+      //       title: "College Counselor",
+      //       description:
+      //         "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
+      //       uploadInfo:
+      //         "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
+      //       linkText: "View Sample Report",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/search-card.svg",
+      //       title: "Research Assistant",
+      //       description:
+      //         "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
+      //       uploadInfo:
+      //         "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
+      //       linkText: "View Sample Project",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/file-card.svg",
+      //       title: "Exam Helper",
+      //       description:
+      //         "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
+      //       uploadInfo:
+      //         "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
+      //       linkText: "View Sample Document",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/currency-coin-card.svg",
+      //       title: "Financial Aid & Scholarship Advisor",
+      //       description:
+      //         "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
+      //       uploadInfo:
+      //         "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
+      //       linkText: "View Sample Document",
+      //     },
+      //   ],
+      // },
+      // // {
+      // //   role: "Academic Coach",
+      // //   cards: [
+      // //     {
+      // //       iconSrc: "/icons/roles_card/user-profile-card.svg",
+      // //       title: "College Counselor",
+      // //       description:
+      // //         "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
+      // //       uploadInfo:
+      // //         "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
+      // //       linkText: "View Sample Report",
+      // //     },
+      // //     {
+      // //       iconSrc: "/icons/roles_card/search-card.svg",
+      // //       title: "Research Assistant",
+      // //       description:
+      // //         "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
+      // //       uploadInfo:
+      // //         "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
+      // //       linkText: "View Sample Project",
+      // //     },
+      // //     {
+      // //       iconSrc: "/icons/roles_card/file-card.svg",
+      // //       title: "Exam Helper",
+      // //       description:
+      // //         "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
+      // //       uploadInfo:
+      // //         "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
+      // //       linkText: "View Sample Document",
+      // //     },
+      // //     {
+      // //       iconSrc: "/icons/roles_card/currency-coin-card.svg",
+      // //       title: "Financial Aid & Scholarship Advisor",
+      // //       description:
+      // //         "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
+      // //       uploadInfo:
+      // //         "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
+      // //       linkText: "View Sample Document",
+      // //     },
+      // //   ],
+      // // },
+      // {
+      //   role: "Pet Care",
+      //   cards: [
+      //     {
+      //       iconSrc: "/icons/roles_card/user-profile-card.svg",
+      //       title: "College Counselor",
+      //       description:
+      //         "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
+      //       uploadInfo:
+      //         "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
+      //       linkText: "View Sample Report",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/search-card.svg",
+      //       title: "Research Assistant",
+      //       description:
+      //         "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
+      //       uploadInfo:
+      //         "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
+      //       linkText: "View Sample Project",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/file-card.svg",
+      //       title: "Exam Helper",
+      //       description:
+      //         "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
+      //       uploadInfo:
+      //         "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
+      //       linkText: "View Sample Document",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/currency-coin-card.svg",
+      //       title: "Financial Aid & Scholarship Advisor",
+      //       description:
+      //         "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
+      //       uploadInfo:
+      //         "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
+      //       linkText: "View Sample Document",
+      //     },
+      //   ],
+      // },
+      // {
+      //   role: "Cooking",
+      //   cards: [
+      //     {
+      //       iconSrc: "/icons/roles_card/user-profile-card.svg",
+      //       title: "College Counselor",
+      //       description:
+      //         "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
+      //       uploadInfo:
+      //         "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
+      //       linkText: "View Sample Report",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/search-card.svg",
+      //       title: "Research Assistant",
+      //       description:
+      //         "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
+      //       uploadInfo:
+      //         "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
+      //       linkText: "View Sample Project",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/file-card.svg",
+      //       title: "Exam Helper",
+      //       description:
+      //         "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
+      //       uploadInfo:
+      //         "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
+      //       linkText: "View Sample Document",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/currency-coin-card.svg",
+      //       title: "Financial Aid & Scholarship Advisor",
+      //       description:
+      //         "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
+      //       uploadInfo:
+      //         "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
+      //       linkText: "View Sample Document",
+      //     },
+      //   ],
+      // },
+      // {
+      //   role: "Recreation",
+      //   cards: [
+      //     {
+      //       iconSrc: "/icons/roles_card/user-profile-card.svg",
+      //       title: "College Counselor",
+      //       description:
+      //         "Receive personalized report on college selection, application strategy, internships, and more based on your information. Unlock tailored insights to make your college journey smoother and more strategic.",
+      //       uploadInfo:
+      //         "✨ Upload your complete resume including GPA, Test Scores, extra-curriculars.",
+      //       linkText: "View Sample Report",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/search-card.svg",
+      //       title: "Research Assistant",
+      //       description:
+      //         "Receive personalized support for your research projects, including topic selection, methodology guidance, literature review assistance, data analysis, and formatting.",
+      //       uploadInfo:
+      //         "✨ Upload your research proposal, outlines, drafts, or any materials related to your research project.",
+      //       linkText: "View Sample Project",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/file-card.svg",
+      //       title: "Exam Helper",
+      //       description:
+      //         "Get customized assistance to prepare for exams with study plans, practice questions, key concept reviews, and more.",
+      //       uploadInfo:
+      //         "✨ Upload your syllabus, list of topics, past exam papers, or any study materials.",
+      //       linkText: "View Sample Document",
+      //     },
+      //     {
+      //       iconSrc: "/icons/roles_card/currency-coin-card.svg",
+      //       title: "Financial Aid & Scholarship Advisor",
+      //       description:
+      //         "Receive assistance with financial aid options, scholarships, and budgeting for college expenses.",
+      //       uploadInfo:
+      //         "✨ Provide details of current financial aid, past scholarship applications, or financial goals.",
+      //       linkText: "View Sample Document",
+      //     },
+      //   ],
+      // },
     ],
   },
 ];

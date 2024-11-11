@@ -13,12 +13,12 @@ function Stepper({ activeStep, steps }: StepperProps) {
       {steps.map((step, index) => (
         <div key={step} className="relative flex items-start pl-10">
           {/* Vertical Line */}
-          {index < steps.length - 1 && (
+          {/* {index < steps.length - 1 && (
             <div
               className="absolute left-4 top-4 w-px h-full bg-gray-300"
               style={{ height: "calc(100% + 12px)" }}
             ></div>
-          )}
+          )} */}
 
           <div className="flex items-center space-x-3">
             <div className="relative z-10 flex items-center justify-center w-6 h-6">

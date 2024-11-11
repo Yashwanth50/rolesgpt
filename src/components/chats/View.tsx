@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { getFileIcon, uploadOptions } from "../Constants";
 import Header from "../common/Header";
 import { useNavigate, useOutletContext } from "react-router-dom";
+import { useForm } from "react-hook-form";
 interface FileWithId {
   fileId: number;
   loading: boolean;
@@ -19,8 +20,16 @@ interface OutletContext {
   setStartStepper: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+type FormData = {
+  question: string;
+};
+
 function View() {
   const navigate = useNavigate();
+
+  const { register, handleSubmit } = useForm<FormData>();
+  // const questionValue = watch("question");
+
   const { setSelectedFilePreviews, setActiveStep, setStartStepper } =
     useOutletContext<OutletContext>();
   const [selectedFiles, setSelectedFiles] = useState<FileWithId[]>([]);
@@ -30,8 +39,10 @@ function View() {
     fileInputRef.current?.click();
   };
 
-  const handleSubmit = (event: any) => {
-    event?.preventDefault();
+  const onSubmit = (data: FormData) => {
+    if (data.question.trim()) {
+      console.log(data);
+    }
     setStartStepper(true);
     setActiveStep(0);
     navigate(`/chat/1`);
@@ -110,6 +121,7 @@ function View() {
     return (
       selectedFiles.length === 0 ||
       selectedFiles.some((file) => file.loading === true)
+      // !questionValue?.trim()
     );
   };
   return (
@@ -259,29 +271,37 @@ function View() {
                             ))}
                           </div>
                         )}
-
-                        <div className=" w-full flex justify-end">
-                          <button
-                            type="submit"
-                            onClick={(e) => handleSubmit(e)}
-                            disabled={isButtonDisabled()}
-                            className={`h-9 w-9 font-semibold rounded ${
-                              selectedFiles.length > 0
-                                ? "bg-suggestion_color"
-                                : "bg-gray-300 cursor-not-allowed opacity-30"
-                            } focus:outline-none ${
-                              selectedFiles.length > 0
-                                ? "cursor-pointer"
-                                : "cursor-not-allowed"
-                            }`}
-                          >
-                            <img
-                              src="/icons/submit.svg"
-                              alt="submit"
-                              className="text-gray-500"
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                          <div className="bg-white rounded-md flex items-center px-3 w-full">
+                            <textarea
+                              {...register("question")}
+                              // placeholder="Ask Roles GPT..."
+                              className="w-full h-12 border-none resize-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-400 py-3 text-base leading-relaxed min-h-[50px]"
                             />
-                          </button>
-                        </div>
+
+                            {/* <div className=" w-full flex justify-end"> */}
+                            <button
+                              type="submit"
+                              // onClick={(e) => handleSubmit(e)}
+                              disabled={isButtonDisabled()}
+                              className={`h-9 w-9 font-semibold rounded ${
+                                selectedFiles.length > 0
+                                  ? "bg-suggestion_color"
+                                  : "bg-gray-300 cursor-not-allowed opacity-30"
+                              } focus:outline-none ${
+                                selectedFiles.length > 0
+                                  ? "cursor-pointer"
+                                  : "cursor-not-allowed"
+                              }`}
+                            >
+                              <img
+                                src="/icons/submit.svg"
+                                alt="submit"
+                                className="text-gray-500"
+                              />
+                            </button>
+                          </div>
+                        </form>
                       </div>
                     </div>
                   </div>
