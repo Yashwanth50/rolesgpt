@@ -108,10 +108,10 @@ const RolesCard: FC<RolesCardProps> = ({ selectedRoleData }) => {
       {selectedRoleData?.cards.map((card, index) => (
         <div
           key={index}
-          className="p-6 border border-gray-200 rounded-lg shadow-sm bg-white flex flex-col justify-between min-h-[400px] cursor-pointer"
+          className="p-6 border border-gray-200 rounded-lg shadow-sm bg-white flex gap-5 flex-col justify-between cursor-pointer"
           onClick={() => handleCardClick(card)}
         >
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-col">
             <img
               src={card.iconSrc}
               alt=""
