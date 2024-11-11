@@ -56,9 +56,9 @@ function View() {
   };
 
   const onSubmit = (data: FormData) => {
-    if (data.question.trim()) {
-      console.log(data);
-    }
+    // if (data.question.trim()) {
+    //   console.log(data);
+    // }
     setStartStepper(true);
     setActiveStep(0);
     navigate(`/chat/1`);
