@@ -1,14 +1,16 @@
 import { FC } from "react";
-import {
-  rolesEnterpriseData,
-  rolesPersonalData,
-  SuggestedQuestions,
-} from "./Constants";
+
 import QuestionCard from "./QuestionCard";
 import RoleSelector from "./RoleSelector";
 import RolesCard from "./RolesCard";
 import { useOutletContext } from "react-router-dom";
-import ChatForm from "./chats/ChatForm";
+import ChatForm from "../chats/ChatForm";
+import {
+  rolesEnterpriseData,
+  rolesPersonalData,
+  SuggestedQuestions,
+} from "../../components/common/Constants";
+import useChats from "src/hooks/useChats";
 // import {
 //   Button,
 //   Dialog,
@@ -17,8 +19,8 @@ import ChatForm from "./chats/ChatForm";
 //   Popover,
 // } from "react-aria-components";
 
-interface OutletContext {
-  activeTab: "Personal" | "Enterprise";
+export interface OutletContext {
+  activeTab: string;
   selectedRole: string;
   setSelectedRole: (role: string) => void;
 }
@@ -26,6 +28,8 @@ interface OutletContext {
 const Home: FC = () => {
   const { activeTab, selectedRole, setSelectedRole } =
     useOutletContext<OutletContext>();
+
+  const chatFormApi = useChats(selectedRole);
 
   const rolesData =
     activeTab === "Personal" ? rolesPersonalData : rolesEnterpriseData;
@@ -37,6 +41,8 @@ const Home: FC = () => {
   const roles = filteredRolesByCat ? filteredRolesByCat.roles : [];
 
   const selectedRoleData = roles.find((role) => role.role === selectedRole);
+
+  console.log("selectedRole::", selectedRole);
 
   return (
     <div className="p-8 flex-1 bg-[#ffff] mt-32">
@@ -65,7 +71,7 @@ const Home: FC = () => {
         </div>
 
         {/* Use the ChatForm component */}
-        <ChatForm />
+        <ChatForm selectedRole={selectedRole} />
 
         {selectedRole === "Select Role" && (
           <div className="mt-8">
@@ -74,7 +80,12 @@ const Home: FC = () => {
             </h3>
             <div className="grid grid-cols-1 gap-4">
               {SuggestedQuestions.map((question, index) => (
-                <QuestionCard key={index} question={question} />
+                <QuestionCard
+                  key={index}
+                  question={question}
+                  handleSubmitChat={chatFormApi.mutate}
+                  selectedRole={selectedRole}
+                />
               ))}
             </div>
           </div>

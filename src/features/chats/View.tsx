@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import {
   getFileIcon,
   rolesEnterpriseData,
   rolesPersonalData,
   uploadOptions,
-} from "../Constants";
-import Header from "../common/Header";
-import { useNavigate, useOutletContext, useParams } from "react-router-dom";
-import { useForm } from "react-hook-form";
+} from "../../components/common/Constants";
+import Header from "../header/Header";
 interface FileWithId {
   fileId: number;
   loading: boolean;
@@ -41,10 +41,10 @@ function View() {
       .flatMap((role) => role.roles.flatMap((r) => r.cards))
       .find((card) => card.card_id === id);
 
-  // const { register, handleSubmit } = useForm<FormData>();
-  const { handleSubmit } = useForm<FormData>();
+  const { register, handleSubmit, watch } = useForm<FormData>();
+  // const { handleSubmit } = useForm<FormData>();
 
-  // const questionValue = watch("question");
+  const questionValue = watch("question");
 
   const { setSelectedFilePreviews, setActiveStep, setStartStepper } =
     useOutletContext<OutletContext>();
@@ -56,9 +56,9 @@ function View() {
   };
 
   const onSubmit = (data: FormData) => {
-    // if (data.question.trim()) {
-    //   console.log(data);
-    // }
+    if (data.question.trim()) {
+      console.log(data);
+    }
     setStartStepper(true);
     setActiveStep(0);
     navigate(`/chat/1`);
@@ -136,8 +136,8 @@ function View() {
   const isButtonDisabled = () => {
     return (
       selectedFiles.length === 0 ||
-      selectedFiles.some((file) => file.loading === true)
-      // !questionValue?.trim()
+      selectedFiles.some((file) => file.loading === true) ||
+      !questionValue?.trim()
     );
   };
   return (
@@ -290,11 +290,11 @@ function View() {
                         )}
                         <form onSubmit={handleSubmit(onSubmit)}>
                           <div className="bg-white rounded-md items-center px-3 w-full flex justify-end">
-                            {/* <textarea
+                            <textarea
                               {...register("question")}
-                              // placeholder="Ask Roles GPT..."
+                              placeholder="Ask Roles GPT..."
                               className="w-full h-12 border-none resize-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-400 py-3 text-base leading-relaxed min-h-[50px]"
-                            /> */}
+                            />
 
                             {/* <div className=" w-full flex justify-end"> */}
                             <button

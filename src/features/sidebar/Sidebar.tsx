@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { Plus } from "lucide-react";
 import ToggleSwitch from "./ToggleSwitch";
 import Profile from "./Profile";
 import Lists from "./Lists";
@@ -38,7 +37,7 @@ const Sidebar: FC<SidebarProps> = ({
             <img
               src="/icons/logo.svg"
               alt="Roles GPT Logo"
-              className="h-9 w-9 text-pink-500"
+              className="h-9 w-9 text-text-primary"
             />
           </button>
 
@@ -59,7 +58,7 @@ const Sidebar: FC<SidebarProps> = ({
             onClick={handleRedirectHome}
             className="flex items-center gap-2 border border-white text-black px-4 py-2 rounded w-full bg-white"
           >
-            <Plus className="h-4 w-4" />
+            <img src="/icons/plus.svg" alt="plus" className="h-6 w-6 *:" />
             New Chat
           </button>
         </div>

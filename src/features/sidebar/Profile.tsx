@@ -1,6 +1,3 @@
-import { Settings } from "lucide-react";
-import React from "react";
-
 function Profile() {
   return (
     <div className="flex justify-center items-center gap-4 w-full">
@@ -13,7 +10,11 @@ function Profile() {
       <div className="text-base leading-5 font-medium">Deepak Singh</div>
 
       <button className="rounded-full hover:bg-gray-200">
-        <Settings className="h-6 w-6" />
+        <img
+          src="/icons/settings (1).svg"
+          alt="settings "
+          className="h-9 w-9 rounded-full bg-gray-400"
+        />
       </button>
     </div>
   );

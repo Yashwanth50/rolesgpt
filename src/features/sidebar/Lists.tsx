@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { ChevronDown } from "lucide-react";
 
 interface SidebarLinkProps {
   href?: string;
@@ -20,7 +19,9 @@ const SidebarLink: FC<SidebarLinkProps> = ({
   >
     <img src={iconSrc} alt={`${label} icon`} className="h-6 w-6" />
     <span>{label}</span>
-    {dropdown && <ChevronDown className="ml-auto h-6 w-6" />}
+    {dropdown && (
+      <img src={"/icons/chevron-down.svg"} alt="" className="ml-auto h-6 w-6" />
+    )}
   </a>
 );
 

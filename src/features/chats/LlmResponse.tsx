@@ -1,6 +1,5 @@
-import { CATEGORY_RESPONSE } from "../Constants";
 import { useOutletContext } from "react-router-dom";
-import React from "react";
+import { CATEGORY_RESPONSE } from "../../components/common/Constants";
 
 interface StepperProps {
   activeStep: number;

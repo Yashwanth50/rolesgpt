@@ -1,8 +1,11 @@
 // import React, { useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import Header from "../common/Header";
-import { getFileIcon, truncateFileName } from "../Constants";
 import LlmResponse from "./LlmResponse";
+import Header from "../header/Header";
+import {
+  getFileIcon,
+  truncateFileName,
+} from "../../components/common/Constants";
 
 interface FileWithId {
   fileId: number;

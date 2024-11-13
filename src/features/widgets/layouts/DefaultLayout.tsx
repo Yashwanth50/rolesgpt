@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import MainContent from "./MainContent";
 import { Outlet } from "react-router-dom";
-import Sidebar from "../components/sidebar/Sidebar";
+import Sidebar from "../../../features/sidebar/Sidebar";
+import MainContent from "../../../features/main/MainContent";
 
 const DefaultLayout: FC = () => {
   const [activeTab, setActiveTab] = useState<"Personal" | "Enterprise">(
