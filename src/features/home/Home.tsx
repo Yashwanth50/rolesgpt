@@ -10,7 +10,7 @@ import {
   rolesPersonalData,
   SuggestedQuestions,
 } from "../../components/common/Constants";
-import useChats from "src/hooks/useChats";
+import { useChatSubmit } from "src/hooks/ChatAPiHooks";
 // import {
 //   Button,
 //   Dialog,
@@ -29,7 +29,7 @@ const Home: FC = () => {
   const { activeTab, selectedRole, setSelectedRole } =
     useOutletContext<OutletContext>();
 
-  const chatFormApi = useChats(selectedRole);
+  const chatFormApi = useChatSubmit(selectedRole);
 
   const rolesData =
     activeTab === "Personal" ? rolesPersonalData : rolesEnterpriseData;
@@ -83,7 +83,7 @@ const Home: FC = () => {
                 <QuestionCard
                   key={index}
                   question={question}
-                  handleSubmitChat={chatFormApi.mutate}
+                  handleSubmitChat={chatFormApi.onSubmit}
                   selectedRole={selectedRole}
                 />
               ))}

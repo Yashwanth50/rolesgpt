@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import LlmResponse from "./LlmResponse";
 import Header from "../header/Header";
 import {
@@ -69,6 +69,8 @@ function ProfileCard() {
 export default function ChatDetails() {
   const { selectedFilePreviews } = useOutletContext<OutletContext>();
 
+  const { chatId, sessionId } = useParams();
+
   return (
     <div className="flex home bg-primarybg md:bg-overall overflow-hidden md:overflow-y-hidden md:overflow-x-hidden p-0">
       <div className="flex flex-col w-full bg-primarybg md:bg-overall relative chat-home h-screen">
@@ -78,8 +80,10 @@ export default function ChatDetails() {
           <div className="flex items-start gap-5 max-w-[800px] relative h-full m-auto mt-2 pb-0 md:pb-8 w-full md:h-full">
             <div className="w-full flex flex-col justify-between gap-6">
               <FileDocuments selectedFilePreviews={selectedFilePreviews} />
+
               <ProfileCard />
-              <LlmResponse />
+
+              {(chatId || sessionId) && <LlmResponse />}
             </div>
           </div>
         </div>

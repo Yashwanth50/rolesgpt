@@ -1,18 +1,16 @@
-export type ChatFormPayload = {
+// chat-types.ts
+
+export interface ChatFormFields {
   Function: string;
   Language: string;
   Role: string;
   context: string;
   description: string;
-  kpis: boolean | string | null;
+  kpis: null;
   llm: string;
-  okrs: boolean | string | null;
+  okrs: null;
   prompt: string;
   template: string;
   uid: string;
   username: string;
-};
-
-export type ChatFormProps = {
-  selectedRole: string;
-};
+}

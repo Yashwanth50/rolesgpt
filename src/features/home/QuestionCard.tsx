@@ -4,12 +4,14 @@ interface QuestionCardProps {
   question: string;
   handleSubmitChat: (data: ChatFormPayload) => void;
   selectedRole?: any;
+  chatId?: any;
 }
 
 function QuestionCard({
   question,
   handleSubmitChat,
   selectedRole,
+  chatId,
 }: QuestionCardProps) {
   return (
     <button

@@ -267,36 +267,134 @@
 
 // export default useProfile;
 
+// import { useState, useEffect, useCallback } from "react";
+// import axios from "axios";
+// import { useAuth } from "./AuthContext";
+// import { jwtDecode } from "jwt-decode";
+
+// function fetchProfile(accessToken, apiUrl) {
+//   const headers = {
+//     Token: `${accessToken}`,
+//   };
+//   return axios.get(`${apiUrl}/auth/profile`, { headers });
+// }
+
+// function useProfile() {
+//   const { hasAuthenticated } = useAuth();
+//   const [profile, setProfile] = useState(null);
+//   const [loading, setLoading] = useState(false);
+//   const [tokenExpired, setTokenExpired] = useState(false);
+//   const apiUrl = process.env.REACT_APP_API_URL;
+
+//   const handleTokenExpiration = useCallback(() => {
+//     if (!tokenExpired) {
+//       setTokenExpired(true);
+//     }
+//   }, [tokenExpired]);
+
+//   const checkTokenExpiration = useCallback(() => {
+//     if (hasAuthenticated) {
+//       try {
+//         const decodedToken = jwtDecode(hasAuthenticated);
+//         const expirationTime = decodedToken.exp * 1000;
+//         const currentTime = Date.now();
+
+//         if (expirationTime <= currentTime) {
+//           handleTokenExpiration();
+//         } else {
+//           const timeoutId = setTimeout(() => {
+//             handleTokenExpiration();
+//           }, expirationTime - currentTime);
+
+//           return () => clearTimeout(timeoutId);
+//         }
+//       } catch (error) {
+//         handleTokenExpiration();
+//       }
+//     }
+//   }, [hasAuthenticated, handleTokenExpiration]);
+
+//   const fetchUserProfile = useCallback(() => {
+//     setLoading(true);
+//     fetchProfile(hasAuthenticated, apiUrl)
+//       .then((response) => {
+//         setProfile(response.data);
+//         setLoading(false);
+//         setTokenExpired(false);
+//       })
+//       .catch((err) => {
+//         if (err.response?.status === 401) {
+//           handleTokenExpiration();
+//         }
+//         setLoading(false);
+//       });
+//   }, [hasAuthenticated, apiUrl, handleTokenExpiration]);
+
+//   useEffect(() => {
+//     if (hasAuthenticated) {
+//       checkTokenExpiration();
+//       fetchUserProfile();
+//     }
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [apiUrl, hasAuthenticated]);
+
+//   return {
+//     profile,
+//     loading,
+//     tokenExpired,
+//     setTokenExpired,
+//   };
+// }
+
+// export default useProfile;
+
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { useAuth } from "./AuthContext";
 import { jwtDecode } from "jwt-decode";
+interface JwtPayload {
+  exp?: number;
+}
 
-function fetchProfile(accessToken, apiUrl) {
+interface Profile {
+  username: string;
+  userid: string;
+  email: string;
+  organization_name?: string | null;
+  job_name?: string | null;
+  role?: string[];
+  permissions?: {
+    subject: string;
+    actions: string[];
+  }[];
+}
+
+function fetchProfile(accessToken: string, apiUrl: string) {
   const headers = {
     Token: `${accessToken}`,
   };
-  return axios.get(`${apiUrl}/auth/profile`, { headers });
+  return axios.get<Profile>(`${apiUrl}/auth/profile`, { headers });
 }
 
 function useProfile() {
-  const { hasAuthenticated } = useAuth();
-  const [profile, setProfile] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [tokenExpired, setTokenExpired] = useState(false);
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const { hasAuthenticated, logout } = useAuth();
+  const [profile, setProfile] = useState<Profile | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [tokenExpired, setTokenExpired] = useState<boolean>(false);
+  const apiUrl = process.env.REACT_APP_API_URL || "";
 
   const handleTokenExpiration = useCallback(() => {
     if (!tokenExpired) {
       setTokenExpired(true);
+      logout();
     }
-  }, [tokenExpired]);
+  }, [tokenExpired, logout]);
 
   const checkTokenExpiration = useCallback(() => {
     if (hasAuthenticated) {
       try {
-        const decodedToken = jwtDecode(hasAuthenticated);
-        const expirationTime = decodedToken.exp * 1000;
+        const decodedToken = jwtDecode<JwtPayload>(hasAuthenticated);
+        const expirationTime = (decodedToken.exp || 0) * 1000; // Convert to milliseconds
         const currentTime = Date.now();
 
         if (expirationTime <= currentTime) {
@@ -309,6 +407,7 @@ function useProfile() {
           return () => clearTimeout(timeoutId);
         }
       } catch (error) {
+        console.error("Error decoding token:", error);
         handleTokenExpiration();
       }
     }
@@ -316,7 +415,7 @@ function useProfile() {
 
   const fetchUserProfile = useCallback(() => {
     setLoading(true);
-    fetchProfile(hasAuthenticated, apiUrl)
+    fetchProfile(hasAuthenticated!, apiUrl)
       .then((response) => {
         setProfile(response.data);
         setLoading(false);
@@ -335,8 +434,7 @@ function useProfile() {
       checkTokenExpiration();
       fetchUserProfile();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [apiUrl, hasAuthenticated]);
+  }, [apiUrl, hasAuthenticated, checkTokenExpiration, fetchUserProfile]);
 
   return {
     profile,
