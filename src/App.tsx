@@ -8,6 +8,7 @@ import View from "./features/chats/View";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ProjectDetails from "./features/project/MyProject";
 import Settings from "./features/Settings";
+import { AuthProvider } from "./features/lib/AuthContext";
 
 function App() {
   const queryClient = new QueryClient({
@@ -20,20 +21,22 @@ function App() {
   });
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<DefaultLayout />}>
-            {/* <Route index element={<Home />} /> */}
-            <Route path="/" element={<Home />} />
-            <Route path="view/:id" element={<View />} />
-            <Route path="chat/:id" element={<ChatDetails />} />
-            <Route path="project/:id" element={<ProjectDetails />} />
-            <Route path="chat/:id/project/:id" element={<ProjectDetails />} />
-            <Route path="project/:id/chat/:id" element={<ProjectDetails />} />
-            <Route path="settings" element={<Settings />} />
-          </Route>
-        </Routes>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<DefaultLayout />}>
+              {/* <Route index element={<Home />} /> */}
+              <Route path="/" element={<Home />} />
+              <Route path="view/:id" element={<View />} />
+              <Route path="chat/:id" element={<ChatDetails />} />
+              <Route path="project/:id" element={<ProjectDetails />} />
+              <Route path="chat/:id/project/:id" element={<ProjectDetails />} />
+              <Route path="project/:id/chat/:id" element={<ProjectDetails />} />
+              <Route path="settings" element={<Settings />} />
+            </Route>
+          </Routes>
+        </Router>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }
