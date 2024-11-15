@@ -297,19 +297,20 @@ function View() {
                           </div>
                         )}
                         <form onSubmit={handleSubmit(onSubmit)}>
-                          <div className="bg-white rounded-md items-center px-3 w-full flex justify-end">
-                            <div className={`focus:outline-none cursor-pointer`} onClick={() => setShowFileUpload(!showFileUpload)}>
-                              <img
-                                src="/icons/attach-file-grad.svg"
-                                alt="attach"
-                                className="rounded-full md:rounded-none attach-icon"
-                              />
-                            </div>
-                            <textarea
+                          <div className="bg-[#F0F4F8] rounded-md items-center px-3 w-full flex justify-end">
+                            <div
                               {...register("question")}
-                              placeholder="Ask Roles GPT..."
-                              className="w-full h-12 border-none resize-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-400 py-3 text-base leading-relaxed min-h-[50px]"
-                            />
+                              className="w-full ml-2 h-12 border-none resize-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-400 py-3 text-base leading-relaxed min-h-[50px]"
+                            >
+                              <div className={`focus:outline-none cursor-pointer inline-flex p-2 bg-[#FFFFFF] border-2 rounded border-[#E0E0E0]`} onClick={() => setShowFileUpload(!showFileUpload)}>
+                                <img
+                                  src="/icons/attach-file-grad.svg"
+                                  alt="attach"
+                                  className="rounded-full md:rounded-none attach-icon mr-2"
+                                />
+                                Upload relevent files
+                              </div>
+                            </div>
 
                             {/* <div className=" w-full flex justify-end"> */}
                             <button
