@@ -26,7 +26,7 @@ const GoogleCallback = () => {
                         `${apiUrl}/google/callback?code=${code}`
                         );
                         console.log(response?.data)
-                        const access_token = response?.data?.access_token;
+                        // const access_token = response?.data?.access_token;
                         // localStorage.setItem("accessToken", access_token);
                         // login(access_token);
                         navigate('/');
@@ -47,7 +47,7 @@ const GoogleCallback = () => {
                         payload
                         );
                         console.log(response?.data)
-                        const access_token = response?.data?.access_token;
+                        // const access_token = response?.data?.access_token;
                         // localStorage.setItem("accessToken", access_token);
                         // login(access_token);
                         navigate('/');
@@ -61,6 +61,7 @@ const GoogleCallback = () => {
         };
 
         fetchUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [apiUrl, location.search]);
 
 
