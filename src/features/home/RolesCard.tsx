@@ -112,20 +112,29 @@ const RolesCard: FC<RolesCardProps> = ({ selectedRoleData }) => {
           onClick={() => handleCardClick(card)}
         >
           <div className="flex flex-col">
-            <img
-              src={card.iconSrc}
-              alt=""
-              className="h-6 w-6 text-gray-500 mb-2"
-            />
-            <h3 className="font-semibold text-gray-700">
-              I am your{" "}
-              <span className="font-bold text-gray-900">{card.title}</span>
-            </h3>
-            <p className="text-gray-600 text-sm leading-6 mt-2">
-              {card.description}
-            </p>
-            <div className="h-[1px] w-full bg-gray-200 my-3"></div>
-            <p className="text-gray-500 text-sm leading-6">{card.uploadInfo}</p>
+            <div>
+              <img
+                src={card.iconSrc}
+                alt=""
+                className="h-6 w-6 text-gray-500 mb-2"
+              />
+              <h3 className="font-semibold text-gray-700">
+                I am your
+                <span className="mx-1 font-bold text-gray-900">
+                  {card.title}
+                </span>
+              </h3>
+              <p className="text-gray-600 text-sm leading-6 mt-2 ">
+                {card.description}
+              </p>
+            </div>
+
+            <div className=" h-28">
+              <div className="h-[1px] w-full bg-gray-200 my-3"></div>
+              <p className="text-gray-500 text-sm leading-6">
+                {card.uploadInfo}
+              </p>
+            </div>
           </div>
           <button
             onClick={() => handleCardClick(card)}

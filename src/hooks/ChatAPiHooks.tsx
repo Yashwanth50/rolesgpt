@@ -399,10 +399,12 @@ export function useChatSubmit(selectedRole: string) {
 
   const { hasAuthenticated } = useAuth();
   const setChatDetails = useChatStore((state) => state.setChatDetails);
+
   const setLoading = useChatStore((state) => state.setLoading);
 
   const chatFormApi = useSubmitChat(selectedRole, external_api_url);
   const fetchSuggestions = useFetchSuggestions();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const saveToDatabase = useSaveToDatabase(selectedRole, chatId || "");
 
   const onSubmit = async (data: ChatFormPayload) => {
@@ -514,6 +516,10 @@ export function useChatSubmit(selectedRole: string) {
         console.error("Error fetching suggestions:", error);
         throw new Error("Failed to fetch suggestions.");
       }
+
+      // if (hasAuthenticated) {
+      //   await saveToDatabase.mutateAsync(console.log("first"));
+      // }
     } catch (error) {
       console.error("Failed to submit chat:", error);
     } finally {
