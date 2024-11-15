@@ -133,6 +133,12 @@ export default function LlmResponse({ promptsWithMessages }: LlmResponseProps) {
             <LlmResponseFormat
               generatedText={promptsWithMessages?.generatedText}
             />
+            {promptsWithMessages?.generatedText && <div className="flex gap-4 w-full justify-end my-4">
+              <div><img src="/icons/rephrase.svg" alt="" /></div>
+              <div><img src="/icons/summary.svg" alt="" /></div>
+              <div><img src="/icons/pin.svg" alt="" /></div>
+              <div><img src="/icons/copy.svg" alt="" /></div>
+            </div>}
           </div>
         </>
       )}
