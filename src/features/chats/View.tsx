@@ -49,6 +49,7 @@ function View() {
   const { setSelectedFilePreviews, setActiveStep, setStartStepper } =
     useOutletContext<OutletContext>();
   const [selectedFiles, setSelectedFiles] = useState<FileWithId[]>([]);
+  const [showFileUpload, setShowFileUpload] = useState(false)
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleBrowseClick = () => {
@@ -140,16 +141,17 @@ function View() {
       !questionValue?.trim()
     );
   };
+
   return (
     <>
       <div className="flex home bg-primarybg md:bg-overall overflow-hidden md:overflow-y-hidden md:overflow-x-hidden p-0">
         <div className="flex flex-col w-full bg-primarybg md:bg-overall relative chat-home h-screen">
           <Header />
           <div className="w-full flex-grow md:h-full chat-screen">
-            <div className="flex items-start gap-5 max-w-[800px] relative h-full m-auto mt-2 pb-0 md:pb-8 w-full md:h-full">
+            <div className="flex items-start gap-5 max-w-[800px] relative h-full m-auto pb-0 md:pb-8 w-full md:h-full">
               <div className="w-full flex flex-col justify-between gap-3">
-                <div className="flex-grow flex flex-col gap-2 mt-2">
-                  <div className="max-w-[100%] rounded-normal rounded-bl-none bg-white md:bg-chatbg px-6 py-5 flex flex-col gap-3 mb-1 mx-4 ">
+                <div className="flex-grow flex flex-col gap-2">
+                  <div className="max-w-[100%] rounded-normal rounded-bl-none bg-white md:bg-chatbg px-6 flex flex-col gap-3 mb-1 mx-4 ">
                     <div className="text-[14px] md:text-[16px] text-secondary font-normal leading-[22px] flex items-start gap-2">
                       <img
                         src="/icons/logo.svg"
@@ -177,34 +179,40 @@ function View() {
                         </p>
                       </div>
                     </div>
-                    <div className="w-full max-w-2xl mx-auto">
-                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-3 flex flex-col gap-3">
-                        <h2 className="text-base font-medium text-[#323232] leading-5">
-                          Upload Documents
-                        </h2>
+                    <div className="w-[740px] fixed bottom-0 max-w-[100%] rounded-normal rounded-bl-none bg-white md:bg-chatbg px-6 mb-4">
+                      {showFileUpload && (
+                        <div className="w-[50%] bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col gap-3 p-3">
+                          <h2 className="text-base font-medium text-[#323232] leading-5">
+                            Upload Documents
+                          </h2>
 
-                        <div className="bg-[#B32C900D] p-3">
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {uploadOptions.map((option, index) => (
-                              <button
-                                key={index}
-                                className={`flex items-center space-x-3 h-9 px-4 rounded-md  ${
-                                  option.isCloud ? "bg-white" : "bg-white"
-                                } hover:bg-gray-50 transition duration-150 w-full font-normal leading-4 `}
-                                onClick={
-                                  option.title === "Browse this Computer"
-                                    ? handleBrowseClick
-                                    : undefined
-                                }
-                              >
-                                <img src={option.icon} alt="logo" />
-                                <span className="text-[#323232] ">
-                                  {option.title}
-                                </span>
-                              </button>
-                            ))}
+                          <div className="p-0">
+                            <div className="grid grid-cols-1 gap-1">
+                              {uploadOptions.map((option, index) => (
+                                <>
+                                  <button
+                                    key={index}
+                                    className={`flex items-center space-x-3 h-9 px-4 rounded-md  ${option.isCloud ? "bg-white" : "bg-white"
+                                      } hover:bg-gray-50 transition duration-150 w-full font-normal leading-4 `}
+                                    onClick={
+                                      option.title === "Browse this Computer"
+                                        ? handleBrowseClick
+                                        : undefined
+                                    }
+                                  >
+                                    <img src={option.icon} alt="logo" />
+                                    <span className="text-[#323232] ">
+                                      {option.title}
+                                    </span>
+                                  </button>
+                                  <hr />
+                                </>
+                              ))}
+                            </div>
                           </div>
                         </div>
+                      )}
+                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col gap-3">
 
                         {/* Browse this Computer */}
                         <input
@@ -290,6 +298,13 @@ function View() {
                         )}
                         <form onSubmit={handleSubmit(onSubmit)}>
                           <div className="bg-white rounded-md items-center px-3 w-full flex justify-end">
+                            <div className={`focus:outline-none cursor-pointer`} onClick={() => setShowFileUpload(!showFileUpload)}>
+                              <img
+                                src="/icons/attach-file-grad.svg"
+                                alt="attach"
+                                className="rounded-full md:rounded-none attach-icon"
+                              />
+                            </div>
                             <textarea
                               {...register("question")}
                               placeholder="Ask Roles GPT..."

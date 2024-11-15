@@ -445,7 +445,7 @@ export const uploadOptions = [
     isCloud: true,
   },
   {
-    icon: "/icons/upload/upload_my_knowledge.svg",
+    icon: "/icons/upload/ms_drive.svg",
     title: "Connect to Microsoft One Drive",
     isCloud: true,
   },
