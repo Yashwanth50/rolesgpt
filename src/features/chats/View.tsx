@@ -232,7 +232,7 @@ function View() {
                                 key={file.fileId}
                                 className="px-3 h-14 border rounded-lg max-w-[214px] bg-white flex items-center justify-between mt-3"
                               >
-                                <div className=" flex items-center gap-3">
+                                <div className="w-full flex items-center gap-2">
                                   {file.loading ? (
                                     <div className="relative w-10 h-10">
                                       <svg className="absolute inset-0 w-full h-full">
@@ -263,20 +263,18 @@ function View() {
                                     <img
                                       src={getFileIcon(file.name)}
                                       alt="file icon"
-                                      className="h-10 w-10"
+                                      className="h-8 w-8"
                                     />
                                   )}
 
-                                  <div className="flex flex-col gap-1">
-                                    <p className="truncate max-w-[180px]">{file.name}</p>
-                                    <p className="text-gray-500 text-sm">
+                                  <div className="max-w-[60%] flex flex-col gap-1">
+                                    <p className="truncate w-full primary-subtext font-normal">{file.name}</p>
+                                    <p className="text-gray-500 text-sm primary-subtext font-medium">
                                       {(file.size / (1024 * 1024)).toFixed(2)}{" "}
                                       MB
                                     </p>
                                   </div>
-                                </div>
-
-                                <button
+                                  <button
                                   onClick={() => removeFile(file.fileId)}
                                   className="text-red-500 font-semibold"
                                 >
@@ -292,6 +290,9 @@ function View() {
                                     className="w-6 h-6"
                                   />
                                 </button>
+                                </div>
+
+                                
                               </div>
                             ))}
                           </div>
