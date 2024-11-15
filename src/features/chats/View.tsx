@@ -212,7 +212,7 @@ function View() {
                           </div>
                         </div>
                       )}
-                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 flex flex-col gap-3">
+                      <div className="bg-white rounded-lg shadow-sm flex flex-col gap-3">
 
                         {/* Browse this Computer */}
                         <input
@@ -226,7 +226,7 @@ function View() {
                         />
 
                         {selectedFiles.length > 0 && (
-                          <div className="flex px-3 gap-2 w-full overflow-auto">
+                          <div className="flex gap-2 w-full overflow-auto">
                             {selectedFiles.map((file) => (
                               <div
                                 key={file.fileId}
