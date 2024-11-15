@@ -12,7 +12,11 @@ code {
     monospace;
 } */
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+strong{
+    font-weight: bold !important;
+  }
 
 @tailwind base;
 @tailwind components;
@@ -26,6 +30,9 @@ code {
   --table-border-radius: 8px;
 }
 
+*{
+  font-family: "Inter", sans-serif !important;
+}
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
@@ -78,7 +85,7 @@ code {
   .text-content blockquote,
   .text-content h4,
   .text-content li {
-    font-weight: 400;
+    font-weight: 300;
     margin: 8px;
   }
 
@@ -113,6 +120,8 @@ code {
     margin: 8px 40px;
   }
 
+  
+
   .text-content p strong {
     font-size: 16px;
     line-height: 24px;
@@ -140,7 +149,7 @@ code {
   .text-content p+p {
     margin-top: 8px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   .text-content a {
@@ -222,7 +231,7 @@ code {
   .text-content blockquote,
   .text-content h4,
   .text-content li {
-    font-weight: 400;
+    font-weight: 300;
     margin: 8px;
   }
 
@@ -283,7 +292,7 @@ code {
   .text-content h6+p {
     margin-top: 8px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   .text-content a {
@@ -365,7 +374,7 @@ code {
   .text-content blockquote,
   .text-content h4,
   .text-content li {
-    font-weight: 400;
+    font-weight: 300;
     margin: 8px;
   }
 
@@ -427,7 +436,7 @@ code {
     margin-top: 8px;
     font-size: 14px;
     line-height: 21px;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   .text-content a {
@@ -510,7 +519,7 @@ code {
   .text-content blockquote,
   .text-content h4,
   .text-content li {
-    font-weight: 400;
+    font-weight: 300;
     margin: 8px;
   }
 
@@ -578,7 +587,7 @@ code {
     margin-top: 8px;
     font-size: 16px;
     line-height: 24px;
-    font-weight: 400;
+    font-weight: 300;
     margin-left: 0;
   }
 
@@ -659,7 +668,7 @@ code {
   .text-content blockquote,
   .text-content h4,
   .text-content li {
-    font-weight: 400;
+    font-weight: 300;
     margin: 8px;
   }
 
@@ -719,7 +728,7 @@ code {
     margin-top: 8px;
     font-size: 14px;
     line-height: 21px;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   .text-content a {

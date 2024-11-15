@@ -92,7 +92,7 @@ export default function LlmResponse({ promptsWithMessages }: LlmResponseProps) {
   ];
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 mt-6">
       <div className="flex items-center gap-3">
         <img src="/icons/logo.svg" alt="logo" className="h-6 w-6" />
         <span className="font-medium leading-5 text-[#323232]">Response</span>
@@ -129,7 +129,7 @@ export default function LlmResponse({ promptsWithMessages }: LlmResponseProps) {
               <LlmResponseFormat generatedText={item.generatedText} />
             </div>
           ))} */}
-          <div className="mt-4 text-content">
+          <div className="mt-0 text-content">
             <LlmResponseFormat
               generatedText={promptsWithMessages?.generatedText}
             />

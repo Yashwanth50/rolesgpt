@@ -94,10 +94,12 @@ export default function ChatDetails() {
         <Header />
 
         <div className="w-full flex-grow md:h-full chat-screen">
-          <div className="flex flex-col items-start gap-5 max-w-[800px] relative h-full m-auto mt-2 pb-0 md:pb-8 w-full md:h-full">
-            <div className="w-full flex flex-col justify-between gap-6">
+          <div className="flex flex-col items-start gap-5 max-w-[800px] relative h-full m-auto mt-2 pb-0 md:pb-0 w-full md:h-full">
+            <div className="w-full flex flex-col justify-between gap-3">
+              <div className="w-full flex flex-col gap-6">
               <FileDocuments selectedFilePreviews={selectedFilePreviews} />
               <ProfileCard />
+              </div>
               <div className="flex-grow h-[700px] overflow-y-scroll scrollbar-hidden mb-3">
                 {/* {promptsWithMessages.map((item, index) => (
                   <Prompt
