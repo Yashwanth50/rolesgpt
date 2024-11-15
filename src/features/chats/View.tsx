@@ -226,11 +226,11 @@ function View() {
                         />
 
                         {selectedFiles.length > 0 && (
-                          <div>
+                          <div className="flex px-3 gap-2 w-full overflow-auto">
                             {selectedFiles.map((file) => (
                               <div
                                 key={file.fileId}
-                                className="px-3 h-14 border rounded-lg bg-white flex items-center justify-between mt-3"
+                                className="px-3 h-14 border rounded-lg max-w-[214px] bg-white flex items-center justify-between mt-3"
                               >
                                 <div className=" flex items-center gap-3">
                                   {file.loading ? (
@@ -267,8 +267,8 @@ function View() {
                                     />
                                   )}
 
-                                  <div className=" flex flex-col gap-1">
-                                    <p>{file.name}</p>
+                                  <div className="flex flex-col gap-1">
+                                    <p className="truncate max-w-[180px]">{file.name}</p>
                                     <p className="text-gray-500 text-sm">
                                       {(file.size / (1024 * 1024)).toFixed(2)}{" "}
                                       MB
@@ -286,7 +286,7 @@ function View() {
                                     src={
                                       file.loading
                                         ? "/icons/close.svg"
-                                        : "/icons/trash.svg"
+                                        : "/icons/close.svg"
                                     }
                                     alt="trash"
                                     className="w-6 h-6"
@@ -300,15 +300,15 @@ function View() {
                           <div className="bg-[#F0F4F8] rounded-md items-center px-3 w-full flex justify-end">
                             <div
                               {...register("question")}
-                              className="w-full ml-2 h-12 border-none resize-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-400 py-3 text-base leading-relaxed min-h-[50px]"
+                              className="w-full ml-2 h-12 border-none resize-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-400 py-2 text-base leading-relaxed min-h-[50px] flex itemx-center "
                             >
-                              <div className={`focus:outline-none cursor-pointer inline-flex p-2 bg-[#FFFFFF] border-2 rounded border-[#E0E0E0]`} onClick={() => setShowFileUpload(!showFileUpload)}>
+                              <div className={`items-center focus:outline-none cursor-pointer inline-flex py-1 px-2 bg-[#FFFFFF] border-2 rounded border-[#E0E0E0]`} onClick={() => setShowFileUpload(!showFileUpload)}>
                                 <img
                                   src="/icons/attach-file-grad.svg"
                                   alt="attach"
                                   className="rounded-full md:rounded-none attach-icon mr-2"
                                 />
-                                Upload relevent files
+                                Upload relevant files
                               </div>
                             </div>
 
