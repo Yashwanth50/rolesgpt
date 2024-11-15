@@ -34,8 +34,8 @@ function FileDocuments({
           key={index}
           className="border rounded-md w-full flex items-center gap-3 h-12 px-2 py-2"
         >
-          <img src={getFileIcon(file.name)} alt="file" className="h-10 w-10" />
-          <div className="font-light text-sm truncate max-w-[120px]">
+          <img src={getFileIcon(file.name)} alt="file" className="h-8 w-8" />
+          <div className="font-normal text-[12px] leading-[16px] truncate max-w-[120px]">
             {truncateFileName(file.name)}
           </div>
         </div>
@@ -50,15 +50,15 @@ function ProfileCard() {
       <img
         src={"/icons/profile.svg"}
         alt={"profile"}
-        className="w-10 h-10 rounded-full"
+        className="w-6 h-6 rounded-full"
       />
       <div className="flex flex-col">
         <div className="flex items-center space-x-2">
-          <span className="font-semibold">Deepak Singh</span>
-          <span className="text-gray-500">|</span>
-          <span className="text-gray-500">Academic Coach</span>
-          <span className="text-gray-500">|</span>
-          <span className="text-gray-500">Today, 05.30 PM</span>
+          <span className="primary-text">Deepak Singh</span>
+          <span className="h-5 border-r-[1.5px] border-[#E0E0E0]"></span>
+          <span className="primary-subtext">Academic Coach</span>
+          <span className="h-5 border-r-[1.5px] border-[#E0E0E0]"></span>
+          <span className="primary-subtext">Today, 05.30 PM</span>
         </div>
       </div>
     </div>
