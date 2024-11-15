@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ProjectDetails from "./features/project/MyProject";
 import Settings from "./features/Settings";
 import { AuthProvider } from "./features/lib/AuthContext";
+import ChatProject from "./features/chatproj/ChatProject";
 
 function App() {
   const queryClient = new QueryClient({
@@ -28,10 +29,12 @@ function App() {
               {/* <Route index element={<Home />} /> */}
               <Route path="/" element={<Home />} />
               <Route path="view/:id" element={<View />} />
-              <Route path="chat/:id" element={<ChatDetails />} />
+              <Route path="chat/:chatId" element={<ChatDetails />} />
+              <Route path="chat" element={<ChatDetails />} />
+              <Route path="session/:sessionId" element={<ChatDetails />} />
               <Route path="project/:id" element={<ProjectDetails />} />
-              <Route path="chat/:id/project/:id" element={<ProjectDetails />} />
-              <Route path="project/:id/chat/:id" element={<ProjectDetails />} />
+              <Route path="chat/:id/project/:id" element={<ChatProject />} />
+              <Route path="project/:id/chat/:id" element={<ChatProject />} />
               <Route path="settings" element={<Settings />} />
             </Route>
           </Routes>

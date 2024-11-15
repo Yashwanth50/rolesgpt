@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
-import { CATEGORY_RESPONSE } from "../../components/common/Constants";
+import LlmResponseFormat from "./LlmResponseFormat";
+// import { CATEGORY_RESPONSE } from "../../components/common/Constants";
 
 interface StepperProps {
   activeStep: number;
@@ -45,34 +46,44 @@ function Stepper({ activeStep, steps }: StepperProps) {
   );
 }
 
-function Categories() {
-  return (
-    <div className="divide-y">
-      {CATEGORY_RESPONSE.map((category, index) => (
-        <div
-          key={index}
-          className="flex items-center w-full h-7 mt-3 justify-between"
-        >
-          <div className="w-full font-medium leading-7">
-            Category {category.category} : {category.title}
-          </div>
-          <button className="w-6 h-6">
-            <img src="/icons/dropdown.svg" alt="dropdown" />
-          </button>
-        </div>
-      ))}
-    </div>
-  );
-}
+// function Categories() {
+//   return (
+//     <div className="divide-y">
+//       {CATEGORY_RESPONSE.map((category, index) => (
+//         <div
+//           key={index}
+//           className="flex items-center w-full h-7 mt-3 justify-between"
+//         >
+//           <div className="w-full font-medium leading-7">
+//             Category {category.category} : {category.title}
+//           </div>
+//           <button className="w-6 h-6">
+//             <img src="/icons/dropdown.svg" alt="dropdown" />
+//           </button>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
 
 interface OutletContext {
   activeStep: number;
   startStepper: boolean;
 }
 
-export default function LlmResponse() {
-  const { activeStep, startStepper } = useOutletContext<OutletContext>();
+interface LlmResponseProps {
+  promptsWithMessages: PromptWithMessage | null;
+}
 
+interface PromptWithMessage {
+  prompt: string;
+  prompt_message_id: string;
+  generatedText?: any;
+}
+
+export default function LlmResponse({ promptsWithMessages }: LlmResponseProps) {
+  const { activeStep, startStepper } = useOutletContext<OutletContext>();
+  console.log("promptsWithMessages", promptsWithMessages);
   const steps = [
     "Process Batch 1",
     "Process Batch 2",
@@ -93,7 +104,7 @@ export default function LlmResponse() {
         <Stepper activeStep={activeStep} steps={steps} />
       ) : (
         <>
-          <div className="text-[#323232]">
+          {/* <div className="text-[#323232]">
             <h3 className="font-bold text-lg leading-8">
               Strategic Guidance for High School Achievers
             </h3>
@@ -106,7 +117,23 @@ export default function LlmResponse() {
               right programs to ensure a successful college journey.
             </div>
           </div>
-          <Categories />
+          <Categories /> */}
+          {/* {promptsWithMessages?.map((item, index) => (
+            <div key={item.prompt_message_id} className="mt-4 text-content">
+              <LlmResponseFormat generatedText={item.generatedText} />
+            </div>
+          ))} */}
+
+          {/* {promptsWithMessages?.map((item, index) => (
+            <div key={item.prompt_message_id} className="mt-4 text-content">
+              <LlmResponseFormat generatedText={item.generatedText} />
+            </div>
+          ))} */}
+          <div className="mt-4 text-content">
+            <LlmResponseFormat
+              generatedText={promptsWithMessages?.generatedText}
+            />
+          </div>
         </>
       )}
     </div>

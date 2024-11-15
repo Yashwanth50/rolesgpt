@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext", // Updated target
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,8 +16,9 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      // "@/*": ["src/*"]
-    }
+      "@/*": ["src/*"]
+    },
+    "types": ["node", "react", "react-dom"] // Ensure core types are included
   },
-  "include": ["src"]
+  "include": ["src", "src/typings.d.ts"] // Include custom declarations in `src/typings.d.ts`
 }

@@ -15,15 +15,18 @@ const DefaultLayout: FC = () => {
   const [startStepper, setStartStepper] = useState(false);
 
   return (
-    <div className="flex h-[100vh] w-[100vw] overflow-hidden md:overflow-auto">
-      <Sidebar
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        setSelectedRole={setSelectedRole}
-        rlsDrpdwn={rlsDrpdwn}
-        setRlsDrpdwn={setRlsDrpdwn}
-      />
-      <main className="flex-grow h-full bg-overall overflow-y-scroll scrollbar-hidden md:overflow-y-auto">
+    <div className="flex h-screen w-[100vw]  overflow-hidden md:overflow-auto">
+      <div className="w-64">
+        <Sidebar
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          setSelectedRole={setSelectedRole}
+          rlsDrpdwn={rlsDrpdwn}
+          setRlsDrpdwn={setRlsDrpdwn}
+        />
+      </div>
+
+      <main className="flex-grow h-full w-full  bg-overall overflow-y-scroll scrollbar-hidden ">
         <MainContent>
           <Outlet
             context={{

@@ -42,18 +42,16 @@ const Home: FC = () => {
 
   const selectedRoleData = roles.find((role) => role.role === selectedRole);
 
-  console.log("selectedRole::", selectedRole);
-
   return (
     <div className="p-8 flex-1 bg-[#ffff] mt-32">
       <div className="mx-auto max-w-3xl">
         <h1 className="text-3xl font-semibold ">Hello Deepak,</h1>
 
         <div className="mt-4 flex items-center gap-3">
-          <h2 className="text-2xl font-semibold bg-gradient-to-r from-orange-400 to-text_primary text-transparent bg-clip-text">
+          <div className="text-[32px] font-semibold bg-gradient-to-r from-orange-400 to-text_primary text-transparent bg-clip-text">
             Choose an Expert Role!
-          </h2>
-          <span>✨</span>
+          </div>
+          <span className="text-[32px] font-normal">✨</span>
 
           <RoleSelector
             roles={roles.map((role) => role.role)}

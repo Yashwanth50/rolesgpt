@@ -1,7 +1,8 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 interface SidebarLinkProps {
-  href?: string;
+  href?: any;
   iconSrc: string;
   label: string;
   dropdown?: boolean;
@@ -13,8 +14,8 @@ const SidebarLink: FC<SidebarLinkProps> = ({
   label,
   dropdown,
 }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     className="flex items-center gap-3 px-3 py-1 h-10 text-gray-500 hover:bg-gray-100 rounded-lg"
   >
     <img src={iconSrc} alt={`${label} icon`} className="h-6 w-6" />
@@ -22,7 +23,7 @@ const SidebarLink: FC<SidebarLinkProps> = ({
     {dropdown && (
       <img src={"/icons/chevron-down.svg"} alt="" className="ml-auto h-6 w-6" />
     )}
-  </a>
+  </Link>
 );
 
 const Lists: FC = () => (

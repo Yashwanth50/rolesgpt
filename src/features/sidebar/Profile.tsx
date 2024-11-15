@@ -11,15 +11,11 @@ function Profile() {
 
       <div className="text-base leading-5 font-medium">Deepak Singh</div>
 
-      <Link
-          to="/settings"
-        className="rounded-full hover:bg-gray-200"
-        onClick={() => {}}
-      >
+      <Link to="/settings" className="rounded-full" onClick={() => {}}>
         <img
-          src="/icons/settings (1).svg"
+          src="/icons/settings.svg"
           alt="settings "
-          className="h-9 w-9 rounded-full bg-gray-400"
+          className="h-9 w-9 rounded-full bg-transparent"
         />
       </Link>
     </div>

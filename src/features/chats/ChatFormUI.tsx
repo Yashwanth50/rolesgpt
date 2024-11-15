@@ -6,6 +6,7 @@ interface ChatFormUIProps {
   questionValue: string;
   getValues: (name: string) => any;
   setValue: (name: string, value: any) => void;
+  hasChatOrSessionId: boolean; // New prop
 }
 
 const ChatFormUI: React.FC<ChatFormUIProps> = ({
@@ -13,12 +14,13 @@ const ChatFormUI: React.FC<ChatFormUIProps> = ({
   questionValue,
   getValues,
   setValue,
+  hasChatOrSessionId,
 }) => (
   <form
     onSubmit={onSubmit}
     className="flex items-center gap-2 bg-prompt_bg rounded-md shadow-sm p-1 w-full my-3"
   >
-    <div className="bg-white rounded-md flex items-center px-3 w-full">
+    <div className="bg-white rounded-md flex items-center gap-3 px-3 w-full">
       <textarea
         name="prompt"
         value={getValues("prompt")}
@@ -27,16 +29,28 @@ const ChatFormUI: React.FC<ChatFormUIProps> = ({
         className="w-full h-12 border-none resize-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-400 py-3 text-base leading-relaxed min-h-[50px]"
       />
 
-      <button
-        type="button"
-        className="cursor-pointer border-[1.5px] border-[#EAEAE3] h-[25px] pb-1 md:py-4 px-2 pr-0 gap-2 rounded-small items-center user-select-none bg-overall md:flex mr-2 w-[250px]"
-      >
-        <img src="/icons/star-mk.svg" alt="star" />
-        <div className="text-[14px] text-grad-5 font-medium mt-[1px] text-left text-text_primary">
-          My Knowledge
-        </div>
-        <img src="/icons/chevron-grad.svg" alt="star" />
-      </button>
+      {hasChatOrSessionId ? (
+        // Attach icon when chatId or sessionId is present
+        <button
+          type="button"
+          className="cursor-pointer p-2 rounded-full bg-gray-100 mr-2"
+        >
+          <img src="/icons/attach.svg" alt="attach" className="h-5 w-5" />
+        </button>
+      ) : (
+        // "My Knowledge" button otherwise
+        
+        <button
+          type="button"
+          className="cursor-pointer border-2 border-[#EAEAE3] h-9 w-36   gap-2 rounded-sm items-center user-select-none bg-overall md:flex justify-between px-3 "
+        >
+          <img src="/icons/attach-home.svg" alt="attach" />
+          <div className="text-[14px] text-grad-5 font-medium mt-[1px] text-left text-text_primary">
+            Knowledge
+          </div>
+          {/* <img src="/icons/chevron-grad.svg" alt="chevron" />S */}
+        </button>
+      )}
 
       <button
         type="submit"

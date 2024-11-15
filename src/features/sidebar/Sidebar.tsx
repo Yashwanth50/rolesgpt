@@ -30,7 +30,7 @@ const Sidebar: FC<SidebarProps> = ({
   };
 
   return (
-    <aside className="w-64 border-r bg-bg_sidebar flex flex-col justify-between h-full">
+    <div className=" w-64 border-r bg-bg_sidebar flex flex-col justify-between h-full">
       <div>
         <div className="flex gap-3 items-center h-14 border-b px-4">
           <button onClick={handleRedirectHome}>
@@ -71,7 +71,7 @@ const Sidebar: FC<SidebarProps> = ({
           <Profile />
         </div>
       </div>
-    </aside>
+    </div>
   );
 };
 
