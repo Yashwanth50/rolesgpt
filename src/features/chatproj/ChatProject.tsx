@@ -10,9 +10,25 @@ export default function ChatProject() {
       </div>
       <div className="w-full border-l-2 border-rl[#E0E0E0]">
         <div className="flex justify-between items-center w-full py-4 h-[45px] relative md:flex px-4 my-4 pb-[34px] border-b-2 border-b-[#E0E0E0]">
+          <div className="flex items-center space-x-2">
+            <button className="hover:rounded-full hover:bg-[#4248501A]">
+              <img
+                src="/icons/cross.svg"
+                alt="dots"
+                className="w-[40px] h-[40px]"
+              />
+            </button>
+            <button className="hover:rounded-full hover:bg-[#4248501A]">
+              <img
+                src="/icons/expand.svg"
+                alt="dots"
+                className="w-[40px] h-[40px]"
+              />
+            </button>
+          </div>
           <div>
             <h1 className="text-xl font-semibold">
-              Strategic Guidance for High School Achievers
+              High School Achievers
             </h1>
             <p className="text-sm text-gray-500">
               Last modified by John Doe, 05:30 PM
