@@ -21,6 +21,12 @@ const ChatFormUI: React.FC<ChatFormUIProps> = ({
     className="flex items-center gap-2 bg-prompt_bg rounded-md shadow-sm p-1 w-full my-3"
   >
     <div className="bg-white rounded-md flex items-center gap-3 px-3 w-full">
+      {hasChatOrSessionId && (
+        <button type="button" className="cursor-pointer p-2  mr-2">
+          <img src="/icons/attach.svg" alt="attach" className="h-6 w-6" />
+        </button>
+      )}
+
       <textarea
         name="prompt"
         value={getValues("prompt")}
@@ -29,17 +35,7 @@ const ChatFormUI: React.FC<ChatFormUIProps> = ({
         className="w-full h-12 border-none resize-none focus:outline-none focus:ring-0 text-gray-700 placeholder-gray-400 py-3 text-base leading-relaxed min-h-[50px]"
       />
 
-      {hasChatOrSessionId ? (
-        // Attach icon when chatId or sessionId is present
-        <button
-          type="button"
-          className="cursor-pointer p-2 rounded-full bg-gray-100 mr-2"
-        >
-          <img src="/icons/attach.svg" alt="attach" className="h-5 w-5" />
-        </button>
-      ) : (
-        // "My Knowledge" button otherwise
-        
+      {!hasChatOrSessionId && (
         <button
           type="button"
           className="cursor-pointer border-2 border-[#EAEAE3] h-9 w-36   gap-2 rounded-sm items-center user-select-none bg-overall md:flex justify-between px-3 "
