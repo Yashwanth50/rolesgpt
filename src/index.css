@@ -58,10 +58,13 @@ code {
 .text-content .code-scroll::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
+
 .custom-syntax-highlighter {
   background-color: black !important;
 }
+
 @media only screen and (min-width: 1200px) {
+
   /* Large Desktop Styles */
   .text-content,
   .text-content body,
@@ -128,13 +131,13 @@ code {
     margin-top: 16px;
   }
 
-  .text-content h1 + p,
-  .text-content h2 + p,
-  .text-content h3 + p,
-  .text-content h4 + p,
-  .text-content h5 + p,
-  .text-content h6 + p,
-  .text-content p + p {
+  .text-content h1+p,
+  .text-content h2+p,
+  .text-content h3+p,
+  .text-content h4+p,
+  .text-content h5+p,
+  .text-content h6+p,
+  .text-content p+p {
     margin-top: 8px;
     font-size: 16px;
     font-weight: 400;
@@ -205,6 +208,7 @@ code {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
+
   /* Tablet and Medium Desktop Styles */
   .text-content,
   .text-content body,
@@ -271,12 +275,12 @@ code {
     margin-top: 16px;
   }
 
-  .text-content h1 + p,
-  .text-content h2 + p,
-  .text-content h3 + p,
-  .text-content h4 + p,
-  .text-content h5 + p,
-  .text-content h6 + p {
+  .text-content h1+p,
+  .text-content h2+p,
+  .text-content h3+p,
+  .text-content h4+p,
+  .text-content h5+p,
+  .text-content h6+p {
     margin-top: 8px;
     font-size: 16px;
     font-weight: 400;
@@ -347,6 +351,7 @@ code {
 }
 
 @media only screen and (max-width: 767px) {
+
   /* Mobile Styles */
   .text-content,
   .text-content body,
@@ -413,12 +418,12 @@ code {
     margin-top: 16px;
   }
 
-  .text-content h1 + p,
-  .text-content h2 + p,
-  .text-content h3 + p,
-  .text-content h4 + p,
-  .text-content h5 + p,
-  .text-content h6 + p {
+  .text-content h1+p,
+  .text-content h2+p,
+  .text-content h3+p,
+  .text-content h4+p,
+  .text-content h5+p,
+  .text-content h6+p {
     margin-top: 8px;
     font-size: 14px;
     line-height: 21px;
@@ -491,6 +496,7 @@ code {
 
 /* Large desktop: Above standard desktop sizes */
 @media only screen and (min-width: 1200px) {
+
   /* Your CSS styles for large desktop */
   .text-content,
   .text-content body,
@@ -563,12 +569,12 @@ code {
     margin-top: 16px;
   }
 
-  .text-content h1 + p,
-  .text-content h2 + p,
-  .text-content h3 + p,
-  .text-content h4 + p,
-  .text-content h5 + p,
-  .text-content h6 + p {
+  .text-content h1+p,
+  .text-content h2+p,
+  .text-content h3+p,
+  .text-content h4+p,
+  .text-content h5+p,
+  .text-content h6+p {
     margin-top: 8px;
     font-size: 16px;
     line-height: 24px;
@@ -640,6 +646,7 @@ code {
 }
 
 @media (max-width: 768px) {
+
   .text-content,
   .text-content body,
   .text-content p {
@@ -703,12 +710,12 @@ code {
     margin-top: 16px;
   }
 
-  .text-content h1 + p,
-  .text-content h2 + p,
-  .text-content h3 + p,
-  .text-content h4 + p,
-  .text-content h5 + p,
-  .text-content h6 + p {
+  .text-content h1+p,
+  .text-content h2+p,
+  .text-content h3+p,
+  .text-content h4+p,
+  .text-content h5+p,
+  .text-content h6+p {
     margin-top: 8px;
     font-size: 14px;
     line-height: 21px;
@@ -753,4 +760,65 @@ code {
     padding: 3px;
     font-size: 1rem;
   }
+}
+
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  /* background: url('../public/assets/sign-in.png');
+  background-size: cover; */
+  position: relative;
+}
+
+.login .box {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.login .box input[type="text"],
+.login .box input[type="email"],
+.login .box input[type="password"] {
+  background: white;
+  color: #323232;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.login .box input[type="text"]::placeholder,
+.login .box input[type="email"]::placeholder,
+.login .box input[type="password"]::placeholder {
+  color: #323232;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.login .box .inner-box {
+  height: inherit;
+  width: 40%;
+  background: url("/public/images/sign-img.png");
+  background-size: cover;
+}
+
+.login .box .inner-box.forgot-pass {
+  height: 100%;
+  width: 412px;
+  background: url("/public/images/sign-img.png");
+  background-size: cover;
+  border-radius: 32px;
+}
+
+.form-input {
+  @apply border p-2 pl-4 h-[32px] md:h-[48px] border-gray-300 rounded-[8px] md:rounded-[3px] text-base focus:outline-none placeholder:text-gray-500;
+}
+
+.form-label {
+  @apply font-medium text-sm text-gray-400;
+}
+
+.sign {
+  background: linear-gradient(90.77deg, #78A9FF -4.04%, #0043CE 100.67%);
 }

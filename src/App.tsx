@@ -9,6 +9,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ProjectDetails from "./features/project/MyProject";
 import Settings from "./features/Settings";
 import { AuthProvider } from "./features/lib/AuthContext";
+import Dashboard from "./features/dashboard/Dashboard";
+import SignInUI from "./components/signin/SignInUI";
 import ChatProject from "./features/chatproj/ChatProject";
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
       <AuthProvider>
         <Router>
           <Routes>
+            <Route path="/signin" element={<SignInUI />} />
             <Route path="/" element={<DefaultLayout />}>
               {/* <Route index element={<Home />} /> */}
               <Route path="/" element={<Home />} />
@@ -36,6 +39,7 @@ function App() {
               <Route path="chat/:id/project/:id" element={<ChatProject />} />
               <Route path="project/:id/chat/:id" element={<ChatProject />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="dashboard" element={<Dashboard />} />
             </Route>
           </Routes>
         </Router>
