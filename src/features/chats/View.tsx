@@ -49,7 +49,7 @@ function View() {
   const { setSelectedFilePreviews, setActiveStep, setStartStepper } =
     useOutletContext<OutletContext>();
   const [selectedFiles, setSelectedFiles] = useState<FileWithId[]>([]);
-  const [showFileUpload, setShowFileUpload] = useState(false)
+  const [showFileUpload, setShowFileUpload] = useState(true)
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleBrowseClick = () => {
