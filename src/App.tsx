@@ -14,6 +14,7 @@ import SignInUI from "./components/signin/SignInUI";
 import ChatProject from "./features/chatproj/ChatProject";
 import GoogleCallback from "./components/signin/GoogleCallback";
 import MsCallback from "./components/signin/MsCallback";
+import MyFiles from "./features/files/MyFiles";
 
 function App() {
   const queryClient = new QueryClient({
@@ -44,6 +45,7 @@ function App() {
               <Route path="chat/:id/project/:id" element={<ChatProject />} />
               <Route path="project/:id/chat/:id" element={<ChatProject />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="/my-knowledge" element={<MyFiles />} />
               {/* <Route path="dashboard" element={<Dashboard />} /> */}
             </Route>
           </Routes>
