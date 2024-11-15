@@ -12,6 +12,8 @@ import { AuthProvider } from "./features/lib/AuthContext";
 // import Dashboard from "./features/dashboard/Dashboard";
 import SignInUI from "./components/signin/SignInUI";
 import ChatProject from "./features/chatproj/ChatProject";
+import GoogleCallback from "./components/signin/GoogleCallback";
+import MsCallback from "./components/signin/MsCallback";
 
 function App() {
   const queryClient = new QueryClient({
@@ -28,6 +30,9 @@ function App() {
         <Router>
           <Routes>
             <Route path="/signin" element={<SignInUI />} />
+            <Route path="/auth/google/callback" element={<GoogleCallback />} />
+            <Route path="/auth/ms/callback" element={<MsCallback />} />
+
             <Route path="/" element={<DefaultLayout />}>
               {/* <Route index element={<Home />} /> */}
               <Route path="/" element={<Home />} />
